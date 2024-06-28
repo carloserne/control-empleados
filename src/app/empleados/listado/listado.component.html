@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h3>Lista de Empleados</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Sexo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="empleados.length > 0">
+        <tr *ngFor="let empleado of empleados; let i = index">
+          <td>{{ empleado.Nombre }}</td>
+          <td>{{ empleado.Correo }}</td>
+          <td>{{ empleado.Telefono }}</td>
+          <td>{{ empleado.FechaNacimiento | date }}</td>
+          <td>{{ empleado.sexo }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminarEmpleado(i)">Eliminar</button>
+            <!--<button class="btn btn-warning" (click)="seleccionarEmpleado(i)">Modificar</button>-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
